@@ -9,6 +9,13 @@ app.use(express.static(__dirname + '/public'));
 var home = require('./routes/home');
 var image = require('./routes/image');
 
+app.use(function(req, res, next){
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
+
 app.use('/',home);
 app.use('/image', image);
 
