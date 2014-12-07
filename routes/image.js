@@ -5,7 +5,7 @@ var exec = require('child_process').exec;
 
 router.get('/', function (req, res) {
     var options = {
-        root: __dirname + '/public/capture'
+        root: './public/captures'
     };
     res.sendFile('image.jpg', options, function (err) {
         if (err) {
